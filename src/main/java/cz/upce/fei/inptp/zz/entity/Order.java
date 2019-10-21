@@ -14,17 +14,5 @@ public class Order {
         }
         this.capacity = capacity;
     }
-
-    public String getFrom() {
-        return from;
-    }
-
-    public String getTo() {
-        return to;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
             
 }

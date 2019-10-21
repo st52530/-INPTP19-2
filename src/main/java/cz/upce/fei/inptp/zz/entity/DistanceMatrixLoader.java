@@ -12,9 +12,8 @@ import java.util.Arrays;
  */
 public class DistanceMatrixLoader {
 
-    private static final String COLUMN_SEPARATOR = ";";
-
     private String fileName;
+    private String columnSeparator = ";";
 
     public DistanceMatrixLoader(String fileName) {
         this.fileName = fileName;
@@ -38,7 +37,7 @@ public class DistanceMatrixLoader {
 
     private String[] loadLocations(BufferedReader reader) throws IOException {
         String header = reader.readLine();
-        String[] tokens = header.split(COLUMN_SEPARATOR);
+        String[] tokens = header.split(columnSeparator);
         return Arrays.copyOfRange(tokens, 1, tokens.length);
     }
 
@@ -47,7 +46,7 @@ public class DistanceMatrixLoader {
 
         for (int i = 0; i < numberOfLocations; i++) {
             String loadedLine = reader.readLine();
-            String[] tokensOnLine = loadedLine.split(COLUMN_SEPARATOR);
+            String[] tokensOnLine = loadedLine.split(columnSeparator);
 
             for (int j = 1; j < tokensOnLine.length; j++) {
                 distances[i][j - 1] = Double.parseDouble(tokensOnLine[j]);

@@ -5,8 +5,6 @@
  */
 package cz.upce.fei.inptp.zz.entity;
 
-import java.util.Objects;
-
 /**
  *
  * @author Roman
@@ -15,10 +13,12 @@ public class Driver {
     private String identifier;
 
     public Driver(String identifier) {
-        this.identifier = Objects.requireNonNull(identifier, "identifier should not be null!");
+        this.identifier = identifier;
     }
 
     public String getIdentifier() {
         return identifier;
     }
+    
+    
 }
